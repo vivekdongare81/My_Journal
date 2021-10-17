@@ -1,0 +1,20 @@
+
+<%- include("partials/header"); -%>
+    <h1>Home</h1>
+     <p><%= HomeData1 %></p>
+
+  <%  HomeData2.forEach(function(postObj){ %>
+
+      <h1><%= postObj.postTitle %></h1>
+      <p>
+        <%= postObj.postText.substring(0,150)+"....."%> 
+        <a href="/posts/<%= postObj.postTitle %>">Read more</a> 
+      </p>
+
+     <%  }); %>
+     <br>
+     <form action="/" method="post">
+   <button name="submit" value="add" class="btn btn-outline-dark">+ Compose New Post</button>
+   <button name="submit" value="delete" class="btn btn-outline-dark">- Delete All</button>
+     </form>
+<%- include("partials/footer"); -%>
